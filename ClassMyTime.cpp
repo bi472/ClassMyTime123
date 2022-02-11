@@ -13,7 +13,9 @@ private:
 
 public:
 	MyTime() {
-
+		m_hour = 0;
+		m_min = 0;
+		m_sec = 0;
 	}
 
 	MyTime(int hour) {
@@ -63,27 +65,28 @@ public:
 	void set_time(char* time) {
 		m_time = time;
 	}
+
+	void print() {
+		cout << "Time: Hour: " << m_hour << " Minute: " << m_min << " Second: " << m_sec << endl;
+	}
 };
 
 int main()
 {
+	int hours, min,sec;
+	cout << "First example of class: " << endl;
 	MyTime time1 = MyTime();
-	MyTime time2 = MyTime(11);
-	MyTime time3 = MyTime(12, 21);
-	MyTime time4 = MyTime(13, 22, 20);
-	cout << "Time: Hour: " << time1.get_h() << " Minute: " << time1.get_m() << " Second: " << time1.get_s() << endl;
-	cout << "Time: Hour: " << time2.get_h() << endl;
-	cout << "Time: Hour: " << time3.get_h() << " Minute: " << time3.get_m() << endl;
-	cout << "Time: Hour: " << time4.get_h() << " Minute: " << time4.get_m() << " Second: " << time4.get_s() << endl;
+	time1.print();
+	cout << "Print hours: " << endl;
+	cin >> hours;
+	MyTime time2 = MyTime(hours);
+	time2.print();
+	cout << "Print minutes: " << endl;
+	cin >> min;
+	MyTime time3 = MyTime(hours, min);
+	time3.print();
+	cout << "Print seconds: " << endl;
+	cin >> sec;
+	MyTime time4 = MyTime(hours, min, sec);
+	time4.print();
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
